@@ -11,12 +11,14 @@ TESTTYPE foo_stub_1(TESTTYPE input)
     TESTTYPE a = input*2;
     printf("foo_stub_1\n");
     RETURN_VALUE(a);
+    return a;
 }
 TESTTYPE foo_stub_2(TESTTYPE input)
 {
     printf("foo_stub_2\n");
     //RETURN_8bit(2);
     RETURN_VALUE(255);
+    return 254;
 }
 TESTTYPE foo(TESTTYPE input)
 {
