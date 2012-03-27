@@ -25,14 +25,5 @@ gcc (Ubuntu/Linaro 4.6.1-9ubuntu3) 4.6.1
     */
     #define ENABLE_STUB(func_name) \
 
-    /**
-    * 桩功能实现函数内使用，实现程序返回
-    */
-    RETURN_VOID()
-    RETURN_8bit(value)
-    RETURN_16bit(value)
-    RETURN_32bit(value)
-    RETURN_64bit(value)
-    RETURN_VALUE(value)
 
 See test.c for example.

@@ -10,14 +10,11 @@ TESTTYPE foo_stub_1(TESTTYPE input)
 {
     TESTTYPE a = input*2;
     printf("foo_stub_1\n");
-    RETURN_VALUE(a);
     return a;
 }
 TESTTYPE foo_stub_2(TESTTYPE input)
 {
     printf("foo_stub_2\n");
-    //RETURN_8bit(2);
-    RETURN_VALUE(255);
     return 254;
 }
 TESTTYPE foo(TESTTYPE input)
@@ -25,6 +22,15 @@ TESTTYPE foo(TESTTYPE input)
     ENABLE_STUB(foo);
     printf("foo\n");
     return input;
+}
+IMPL_CSTUB(bar);
+void bar_1()
+{
+    printf("bar_1\n");
+}
+void bar()
+{
+    ENABLE_STUB(bar);
 }
 
 int main()
@@ -38,6 +44,8 @@ int main()
     SETUP_STUB(foo,foo_stub_2);
     printf("%d\n",foo(4));
 
+    SETUP_STUB(bar,bar_1);
+    bar();
     return 0;
 }
 /* EOF */
